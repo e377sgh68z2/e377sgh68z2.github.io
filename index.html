@@ -1,0 +1,1360 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>抖音风 pmv_潮流节拍影像,官方品牌视频门户</title>
+<meta name="description" content="抖音风 pmv 官方网站，汇聚潮流节拍影像、原创剪辑作品与创作者社区，打造垂直领域高品质内容生态。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23101a2e'/%3E%3Cpath d='M36 12h8v28a12 12 0 1 1-12-12v8a4 4 0 1 0 4 4z' fill='%2300e5ff'/%3E%3Ccircle cx='24' cy='44' r='6' fill='%23ff2e88'/%3E%3C/svg%3E">
+<style>
+:root{
+  --pmv-bg:#0c1020;
+  --pmv-bg2:#111a30;
+  --pmv-card:#151f38;
+  --pmv-line:rgba(120,150,220,.18);
+  --pmv-cyan:#00e5ff;
+  --pmv-pink:#ff2e88;
+  --pmv-purple:#8b5cff;
+  --pmv-text:#e8eefc;
+  --pmv-sub:#93a3c4;
+  --pmv-radius:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",system-ui,sans-serif;
+  background:
+    radial-gradient(1100px 600px at 85% -120px,rgba(139,92,255,.22),transparent 60%),
+    radial-gradient(900px 520px at 0% 10%,rgba(0,229,255,.14),transparent 60%),
+    var(--pmv-bg);
+  color:var(--pmv-text);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+ul{list-style:none}
+.pmv-wrap{width:min(1180px,92vw);margin:0 auto}
+
+/* ---------- sticky stack ---------- */
+.pmv-sticky{position:sticky;top:0;z-index:120}
+
+/* ---------- notice ---------- */
+.pmv-notice{
+  background:linear-gradient(90deg,var(--pmv-pink),var(--pmv-purple) 55%,var(--pmv-cyan));
+  color:#fff;
+  font-size:13.5px;
+  letter-spacing:.3px;
+}
+.pmv-notice-in{
+  display:flex;align-items:center;gap:12px;
+  width:min(1180px,92vw);margin:0 auto;
+  padding:7px 0;overflow:hidden;
+}
+.pmv-notice-tag{
+  flex:0 0 auto;background:rgba(0,0,0,.32);border-radius:999px;
+  padding:1px 10px;font-weight:700;font-size:12px;
+}
+.pmv-notice-list{display:flex;gap:28px;white-space:nowrap;animation:pmv-marquee 26s linear infinite}
+.pmv-notice-list span::before{content:"◆";margin-right:8px;opacity:.7;font-size:9px}
+@keyframes pmv-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ---------- header ---------- */
+.pmv-header{
+  backdrop-filter:blur(14px);
+  background:rgba(12,16,32,.86);
+  border-bottom:1px solid var(--pmv-line);
+}
+.pmv-header-in{
+  display:flex;align-items:center;gap:22px;
+  width:min(1180px,92vw);margin:0 auto;padding:12px 0;
+}
+.pmv-logo{display:flex;align-items:center;gap:10px;flex:0 0 auto}
+.pmv-logo-mark{
+  width:38px;height:38px;border-radius:12px;
+  background:conic-gradient(from 210deg,var(--pmv-cyan),var(--pmv-purple),var(--pmv-pink),var(--pmv-cyan));
+  display:grid;place-items:center;font-weight:900;color:#0a0e1a;font-size:18px;
+}
+.pmv-logo-text b{display:block;font-size:17px;letter-spacing:.5px}
+.pmv-logo-text small{display:block;font-size:10.5px;color:var(--pmv-sub);letter-spacing:2.6px}
+.pmv-nav{display:flex;gap:4px;flex-wrap:wrap;margin-left:auto}
+.pmv-nav a{
+  padding:6px 12px;border-radius:10px;font-size:14px;color:var(--pmv-sub);
+  transition:.22s;
+}
+.pmv-nav a:hover,.pmv-nav a.pmv-nav-on{color:#fff;background:rgba(139,92,255,.22)}
+.pmv-search{
+  display:flex;align-items:center;gap:6px;
+  background:var(--pmv-bg2);border:1px solid var(--pmv-line);
+  border-radius:999px;padding:5px 6px 5px 14px;min-width:190px;
+}
+.pmv-search input{
+  background:transparent;border:0;outline:0;color:var(--pmv-text);
+  font-size:13.5px;width:118px;
+}
+.pmv-search input::placeholder{color:#5d6b88}
+.pmv-search button{
+  border:0;cursor:pointer;border-radius:999px;padding:5px 13px;
+  background:linear-gradient(135deg,var(--pmv-cyan),var(--pmv-purple));
+  color:#06101d;font-weight:800;font-size:12.5px;
+}
+.pmv-burger{
+  display:none;margin-left:auto;border:1px solid var(--pmv-line);background:var(--pmv-bg2);
+  color:var(--pmv-text);border-radius:10px;padding:8px 11px;font-size:15px;cursor:pointer;
+}
+
+/* ---------- hero ---------- */
+.pmv-hero{padding:54px 0 30px;position:relative;overflow:hidden}
+.pmv-hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+.pmv-kicker{
+  display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:2px;
+  color:var(--pmv-cyan);border:1px solid rgba(0,229,255,.34);
+  border-radius:999px;padding:4px 13px;margin-bottom:18px;
+}
+.pmv-kicker::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--pmv-pink);box-shadow:0 0 10px var(--pmv-pink)}
+h1{
+  font-size:clamp(38px,6vw,72px);line-height:1.04;letter-spacing:-1.5px;font-weight:900;
+  background:linear-gradient(100deg,#fff 10%,var(--pmv-cyan) 48%,var(--pmv-pink) 92%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.pmv-h1-sub{font-size:15px;color:var(--pmv-sub);margin-top:12px;max-width:520px}
+.pmv-lead{font-size:14.6px;color:#b8c6e2;margin-top:20px;max-width:560px}
+.pmv-hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.pmv-btn{
+  border:0;cursor:pointer;font-family:inherit;font-size:14.5px;font-weight:700;
+  padding:11px 24px;border-radius:999px;transition:.24s;display:inline-flex;align-items:center;gap:8px;
+}
+.pmv-btn-main{background:linear-gradient(135deg,var(--pmv-pink),var(--pmv-purple));color:#fff;box-shadow:0 10px 30px -10px rgba(255,46,136,.6)}
+.pmv-btn-main:hover{transform:translateY(-2px);box-shadow:0 16px 36px -10px rgba(255,46,136,.75)}
+.pmv-btn-ghost{background:transparent;color:var(--pmv-text);border:1px solid var(--pmv-line)}
+.pmv-btn-ghost:hover{border-color:var(--pmv-cyan);color:var(--pmv-cyan)}
+.pmv-stats{display:flex;gap:30px;margin-top:34px;flex-wrap:wrap}
+.pmv-stat b{display:block;font-size:26px;font-weight:900;color:#fff;letter-spacing:-.5px}
+.pmv-stat b i{font-style:normal;font-size:14px;color:var(--pmv-cyan)}
+.pmv-stat span{font-size:12.5px;color:var(--pmv-sub)}
+
+.pmv-hero-visual{position:relative}
+.pmv-hero-cover{
+  border-radius:26px;overflow:hidden;border:1px solid var(--pmv-line);
+  box-shadow:0 34px 70px -34px rgba(0,229,255,.35);
+  position:relative;aspect-ratio:16/9;background:#0a1224;
+}
+.pmv-hero-cover img{width:100%;height:100%;object-fit:cover}
+.pmv-play{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:66px;height:66px;border-radius:50%;border:0;cursor:pointer;
+  background:rgba(8,14,28,.55);backdrop-filter:blur(3px);
+  border:2px solid rgba(255,255,255,.7);color:#fff;font-size:22px;
+  display:grid;place-items:center;transition:.25s;
+}
+.pmv-play:hover{background:var(--pmv-pink);border-color:var(--pmv-pink);transform:translate(-50%,-50%) scale(1.08)}
+.pmv-hero-badge{
+  position:absolute;left:14px;top:14px;font-size:11.5px;font-weight:800;letter-spacing:1px;
+  background:rgba(0,229,255,.92);color:#04121c;border-radius:999px;padding:3px 11px;
+}
+.pmv-hero-float{
+  position:absolute;right:-10px;bottom:-24px;
+  background:rgba(21,31,56,.94);border:1px solid var(--pmv-line);
+  border-radius:16px;padding:12px 16px;display:flex;gap:12px;align-items:center;
+  box-shadow:0 20px 40px -20px #000;
+}
+.pmv-hero-float b{font-size:20px;color:var(--pmv-pink)}
+.pmv-hero-float span{font-size:11.5px;color:var(--pmv-sub);line-height:1.4;display:block}
+
+/* ---------- section base ---------- */
+section{scroll-margin-top:118px}
+.pmv-sec{padding:56px 0}
+.pmv-sec-head{margin-bottom:30px;max-width:760px}
+.pmv-sec-head h2{
+  font-size:clamp(23px,3vw,32px);font-weight:900;letter-spacing:-.6px;line-height:1.25;
+}
+.pmv-sec-head h2 em{
+  font-style:normal;background:linear-gradient(100deg,var(--pmv-cyan),var(--pmv-pink));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.pmv-sec-head p{color:var(--pmv-sub);font-size:14px;margin-top:8px}
+
+/* ---------- focus ---------- */
+.pmv-focus-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:20px}
+.pmv-card{
+  background:var(--pmv-card);border:1px solid var(--pmv-line);border-radius:var(--pmv-radius);
+  overflow:hidden;transition:.26s;position:relative;
+}
+.pmv-card:hover{transform:translateY(-4px);border-color:rgba(0,229,255,.45);box-shadow:0 24px 46px -26px rgba(0,229,255,.45)}
+.pmv-cover{position:relative;aspect-ratio:16/9;overflow:hidden;background:#0a1224}
+.pmv-cover img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.pmv-card:hover .pmv-cover img{transform:scale(1.045)}
+.pmv-cover::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(6,10,22,.82),rgba(6,10,22,.05) 55%,transparent);
+}
+.pmv-tagline{position:absolute;top:10px;left:10px;z-index:2;display:flex;gap:6px}
+.pmv-chip{
+  font-size:11px;font-weight:700;letter-spacing:.6px;border-radius:999px;
+  padding:3px 9px;background:rgba(0,229,255,.92);color:#06121c;
+}
+.pmv-chip.pmv-chip-pink{background:rgba(255,46,136,.94);color:#fff}
+.pmv-chip.pmv-chip-line{background:rgba(10,16,30,.7);color:#cfe0ff;border:1px solid rgba(255,255,255,.28)}
+.pmv-dur{position:absolute;right:10px;bottom:10px;z-index:2;font-size:11px;background:rgba(4,8,18,.78);border-radius:6px;padding:2px 7px;color:#d6e4ff}
+.pmv-card-body{padding:14px 16px 16px}
+.pmv-card-body h3{font-size:15.6px;font-weight:800;line-height:1.45}
+.pmv-card-body p{font-size:12.8px;color:var(--pmv-sub);margin-top:6px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.pmv-meta{display:flex;align-items:center;gap:10px;margin-top:12px;font-size:11.8px;color:#7f8fb0;flex-wrap:wrap}
+.pmv-avatar{
+  width:24px;height:24px;border-radius:50%;display:grid;place-items:center;
+  font-size:11px;font-weight:800;color:#fff;flex:0 0 auto;
+}
+.pmv-actions{display:flex;gap:8px;margin-top:12px}
+.pmv-act{
+  border:1px solid var(--pmv-line);background:transparent;color:var(--pmv-sub);
+  font-family:inherit;font-size:12px;border-radius:999px;padding:4px 11px;cursor:pointer;transition:.2s;
+  display:inline-flex;align-items:center;gap:5px;
+}
+.pmv-act:hover{color:#fff;border-color:var(--pmv-cyan)}
+.pmv-act.pmv-on{color:var(--pmv-pink);border-color:var(--pmv-pink);background:rgba(255,46,136,.12)}
+.pmv-act.pmv-on-heart{color:#ff5c8a;border-color:#ff5c8a;background:rgba(255,92,138,.12)}
+.pmv-focus-side{display:grid;gap:20px;grid-template-rows:repeat(2,1fr)}
+.pmv-mini{display:grid;grid-template-columns:112px 1fr;gap:0}
+.pmv-mini .pmv-cover{aspect-ratio:1/1;height:100%}
+.pmv-mini .pmv-card-body{padding:12px 14px}
+.pmv-mini h3{font-size:13.6px}
+
+/* ---------- video stream ---------- */
+.pmv-stream{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.pmv-filter{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.pmv-filter button{
+  border:1px solid var(--pmv-line);background:transparent;color:var(--pmv-sub);
+  font-family:inherit;font-size:12.8px;border-radius:999px;padding:5px 14px;cursor:pointer;transition:.2s;
+}
+.pmv-filter button:hover{color:#fff}
+.pmv-filter button.pmv-filter-on{background:linear-gradient(135deg,var(--pmv-cyan),var(--pmv-purple));color:#04121c;font-weight:800;border-color:transparent}
+.pmv-empty{display:none;color:var(--pmv-sub);font-size:13.5px;padding:14px 0}
+
+/* ---------- topic / special ---------- */
+.pmv-topics{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.pmv-topic{
+  border-radius:16px;overflow:hidden;position:relative;aspect-ratio:3/4;
+  border:1px solid var(--pmv-line);cursor:pointer;
+}
+.pmv-topic img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.pmv-topic:hover img{transform:scale(1.06)}
+.pmv-topic-mask{
+  position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;
+  padding:16px;background:linear-gradient(to top,rgba(5,9,20,.92),rgba(5,9,20,.1) 62%);
+}
+.pmv-topic-mask b{font-size:15px;line-height:1.4}
+.pmv-topic-mask span{font-size:11.5px;color:#9fb2d6;margin-top:4px}
+.pmv-topic-status{
+  align-self:flex-start;margin-bottom:8px;font-size:10.5px;font-weight:800;
+  border-radius:999px;padding:2px 9px;background:rgba(0,229,255,.9);color:#05121c;
+}
+.pmv-topic-status.pmv-status-soon{background:rgba(139,92,255,.85);color:#fff}
+
+/* ---------- creators ---------- */
+.pmv-creators{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.pmv-creator{
+  background:linear-gradient(160deg,rgba(21,31,56,.95),rgba(17,26,48,.75));
+  border:1px solid var(--pmv-line);border-radius:16px;padding:18px;transition:.24s;
+}
+.pmv-creator:hover{border-color:rgba(255,46,136,.45);transform:translateY(-3px)}
+.pmv-creator-top{display:flex;gap:12px;align-items:center}
+.pmv-big-avatar{
+  width:50px;height:50px;border-radius:16px;display:grid;place-items:center;
+  font-weight:900;font-size:19px;color:#04121c;flex:0 0 auto;
+}
+.pmv-creator-top b{font-size:15px}
+.pmv-creator-top small{display:block;font-size:11.5px;color:var(--pmv-cyan);margin-top:2px}
+.pmv-creator p{font-size:12.6px;color:var(--pmv-sub);margin-top:12px}
+.pmv-creator-nums{display:flex;gap:16px;margin-top:12px;font-size:11.6px;color:#8fa1c4}
+.pmv-creator-nums b{color:#fff;font-size:13px}
+
+/* ---------- story ---------- */
+.pmv-story-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.pmv-story{
+  border:1px solid var(--pmv-line);border-radius:16px;padding:22px;
+  background:linear-gradient(150deg,rgba(139,92,255,.12),rgba(0,229,255,.05));
+}
+.pmv-story h3{font-size:16px;margin-bottom:10px}
+.pmv-story p{font-size:13.4px;color:#a9b9d8}
+.pmv-story small{display:block;margin-top:14px;font-size:11.6px;color:#7b8cad;letter-spacing:.5px}
+
+/* ---------- ranking ---------- */
+.pmv-rank{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.pmv-rank-col{background:var(--pmv-card);border:1px solid var(--pmv-line);border-radius:16px;padding:16px 18px}
+.pmv-rank-col h3{font-size:14.5px;margin-bottom:12px;color:var(--pmv-cyan);letter-spacing:.5px}
+.pmv-rank-col ol{counter-reset:pmvrk}
+.pmv-rank-col li{
+  counter-increment:pmvrk;display:flex;gap:10px;font-size:13px;color:#b6c5e1;
+  padding:8px 0;border-bottom:1px dashed rgba(120,150,220,.14);
+}
+.pmv-rank-col li:last-child{border-bottom:0}
+.pmv-rank-col li::before{
+  content:counter(pmvrk);font-weight:900;color:var(--pmv-pink);min-width:16px;font-size:12.5px;
+}
+
+/* ---------- review ---------- */
+.pmv-reviews{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.pmv-review{
+  border:1px solid var(--pmv-line);border-radius:14px;padding:16px 18px;
+  background:rgba(21,31,56,.6);position:relative;
+}
+.pmv-review-top{display:flex;gap:10px;align-items:center;margin-bottom:8px}
+.pmv-review-top b{font-size:13.4px}
+.pmv-review-top small{font-size:11px;color:#7b8cad}
+.pmv-review p{font-size:13px;color:#aab9d6}
+.pmv-review-stars{color:#ffd35c;font-size:12px;letter-spacing:2px;margin-bottom:6px}
+
+/* ---------- dynamic / update ---------- */
+.pmv-timeline{position:relative;padding-left:22px;border-left:1px solid var(--pmv-line)}
+.pmv-timeline-item{position:relative;padding-bottom:22px}
+.pmv-timeline-item::before{
+  content:"";position:absolute;left:-28px;top:6px;width:11px;height:11px;border-radius:50%;
+  background:var(--pmv-cyan);box-shadow:0 0 0 4px rgba(0,229,255,.16);
+}
+.pmv-timeline-item time{font-size:11.5px;color:var(--pmv-pink);letter-spacing:.8px}
+.pmv-timeline-item h3{font-size:14.6px;margin:4px 0 5px}
+.pmv-timeline-item p{font-size:13px;color:var(--pmv-sub)}
+
+/* ---------- analysis long text ---------- */
+.pmv-analysis{
+  background:linear-gradient(160deg,rgba(17,26,48,.9),rgba(12,16,32,.7));
+  border:1px solid var(--pmv-line);border-radius:20px;padding:32px;
+}
+.pmv-analysis h2{font-size:clamp(22px,3vw,29px);font-weight:900;margin-bottom:18px}
+.pmv-analysis h3{font-size:16px;margin:22px 0 8px;color:var(--pmv-cyan)}
+.pmv-analysis p{font-size:13.9px;color:#adbcda;margin-bottom:12px}
+.pmv-analysis strong{color:#fff}
+
+/* ---------- faq ---------- */
+.pmv-faq{display:grid;gap:10px}
+.pmv-faq details{
+  border:1px solid var(--pmv-line);border-radius:12px;background:rgba(21,31,56,.55);
+  padding:14px 18px;transition:.2s;
+}
+.pmv-faq details[open]{border-color:rgba(0,229,255,.4);background:rgba(21,31,56,.9)}
+.pmv-faq summary{
+  cursor:pointer;font-size:14px;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:12px;
+}
+.pmv-faq summary::-webkit-details-marker{display:none}
+.pmv-faq summary::after{content:"+";color:var(--pmv-pink);font-weight:900;font-size:16px}
+.pmv-faq details[open] summary::after{content:"−"}
+.pmv-faq p{font-size:13.2px;color:var(--pmv-sub);margin-top:10px}
+
+/* ---------- partners ---------- */
+.pmv-partners{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.pmv-partner{
+  border:1px dashed var(--pmv-line);border-radius:12px;padding:18px 10px;text-align:center;
+  font-size:13px;color:#9db0d2;letter-spacing:.5px;transition:.22s;
+}
+.pmv-partner:hover{border-color:var(--pmv-cyan);color:var(--pmv-cyan)}
+
+/* ---------- contact ---------- */
+.pmv-contact{
+  border-radius:20px;padding:34px;text-align:center;
+  background:
+    radial-gradient(600px 220px at 50% 0%,rgba(255,46,136,.22),transparent 70%),
+    linear-gradient(160deg,rgba(21,31,56,.95),rgba(12,16,32,.9));
+  border:1px solid var(--pmv-line);
+}
+.pmv-contact h2{font-size:clamp(22px,3vw,28px);margin-bottom:10px}
+.pmv-contact p{font-size:13.6px;color:var(--pmv-sub);max-width:620px;margin:0 auto 22px}
+.pmv-contact-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.pmv-contact-info{margin-top:20px;font-size:12.4px;color:#7f8fb0;line-height:2}
+
+/* ---------- footer ---------- */
+footer{
+  border-top:1px solid var(--pmv-line);margin-top:40px;padding:36px 0 26px;
+  background:rgba(9,13,24,.85);
+}
+.pmv-foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:26px}
+.pmv-foot-grid h4{font-size:13px;color:#fff;margin-bottom:10px;letter-spacing:.8px}
+.pmv-foot-grid p,.pmv-foot-grid a{font-size:12.4px;color:#7f8fb0;line-height:2.05;display:block}
+.pmv-foot-grid a:hover{color:var(--pmv-cyan)}
+.pmv-foot-bottom{
+  margin-top:26px;padding-top:18px;border-top:1px solid var(--pmv-line);
+  font-size:11.8px;color:#66759a;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+}
+
+/* ---------- toast / modal / backtop ---------- */
+.pmv-toast{
+  position:fixed;left:50%;bottom:34px;transform:translate(-50%,20px);
+  background:rgba(21,31,56,.97);border:1px solid var(--pmv-cyan);color:#e8eefc;
+  font-size:13px;padding:10px 20px;border-radius:999px;opacity:0;pointer-events:none;
+  transition:.3s;z-index:400;box-shadow:0 16px 40px -16px rgba(0,229,255,.6);
+}
+.pmv-toast.pmv-show{opacity:1;transform:translate(-50%,0)}
+
+.pmv-modal{
+  position:fixed;inset:0;z-index:500;display:none;place-items:center;
+  background:rgba(4,7,16,.78);backdrop-filter:blur(6px);padding:20px;
+}
+.pmv-modal.pmv-open{display:grid}
+.pmv-modal-box{
+  width:min(560px,94vw);background:#131c31;border:1px solid var(--pmv-line);
+  border-radius:18px;padding:24px;position:relative;max-height:84vh;overflow:auto;
+}
+.pmv-modal-box h3{font-size:17px;margin-bottom:8px}
+.pmv-modal-box p{font-size:13.2px;color:var(--pmv-sub)}
+.pmv-modal-close{
+  position:absolute;right:14px;top:12px;background:transparent;border:0;color:#94a6c8;
+  font-size:20px;cursor:pointer;line-height:1;
+}
+.pmv-modal-field{margin-top:12px}
+.pmv-modal-field input,.pmv-modal-field textarea{
+  width:100%;background:#0e1628;border:1px solid var(--pmv-line);border-radius:10px;
+  color:var(--pmv-text);font-family:inherit;font-size:13.4px;padding:10px 12px;outline:0;resize:vertical;
+}
+.pmv-modal-field input:focus,.pmv-modal-field textarea:focus{border-color:var(--pmv-cyan)}
+.pmv-modal-actions{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+
+.pmv-backtop{
+  position:fixed;right:22px;bottom:26px;z-index:300;width:44px;height:44px;border-radius:50%;
+  border:1px solid var(--pmv-line);background:rgba(21,31,56,.92);color:var(--pmv-cyan);
+  font-size:17px;cursor:pointer;display:grid;place-items:center;opacity:0;pointer-events:none;transition:.3s;
+}
+.pmv-backtop.pmv-show{opacity:1;pointer-events:auto}
+.pmv-backtop:hover{background:var(--pmv-cyan);color:#04121c}
+
+/* ---------- responsive ---------- */
+@media(max-width:1000px){
+  .pmv-hero-grid{grid-template-columns:1fr;gap:34px}
+  .pmv-focus-grid{grid-template-columns:1fr}
+  .pmv-stream{grid-template-columns:repeat(2,1fr)}
+  .pmv-topics{grid-template-columns:repeat(2,1fr)}
+  .pmv-creators{grid-template-columns:repeat(2,1fr)}
+  .pmv-rank{grid-template-columns:1fr}
+  .pmv-partners{grid-template-columns:repeat(3,1fr)}
+  .pmv-foot-grid{grid-template-columns:1fr 1fr}
+  .pmv-search{display:none}
+}
+@media(max-width:720px){
+  .pmv-burger{display:block}
+  .pmv-nav{
+    display:none;position:absolute;left:0;right:0;top:100%;
+    background:rgba(12,16,32,.98);border-bottom:1px solid var(--pmv-line);
+    padding:12px 5vw 18px;flex-direction:column;gap:2px;
+  }
+  .pmv-nav.pmv-nav-open{display:flex}
+  .pmv-header-in{position:relative;flex-wrap:wrap}
+  .pmv-stream,.pmv-creators,.pmv-story-grid,.pmv-reviews{grid-template-columns:1fr}
+  .pmv-topics{grid-template-columns:1fr 1fr}
+  .pmv-analysis{padding:22px}
+  .pmv-partners{grid-template-columns:1fr 1fr}
+  .pmv-foot-grid{grid-template-columns:1fr}
+  .pmv-hero-float{right:6px}
+  .pmv-stats{gap:20px}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="pmv-sticky">
+  <div class="pmv-notice">
+    <div class="pmv-notice-in">
+      <span class="pmv-notice-tag">官方发布</span>
+      <div class="pmv-notice-list" id="pmvNoticeList">
+        <span>「节拍剪辑挑战赛」报名开启，投稿通道已上线</span>
+        <span>11 月精选 pmv 合辑《霓虹脉冲》正式发布</span>
+        <span>创作者学院新增 6 节剪辑节奏课程</span>
+        <span>社区投票：年度最佳抖音风 pmv 作品评选启动</span>
+        <span>「节拍剪辑挑战赛」报名开启，投稿通道已上线</span>
+        <span>11 月精选 pmv 合辑《霓虹脉冲》正式发布</span>
+        <span>创作者学院新增 6 节剪辑节奏课程</span>
+        <span>社区投票：年度最佳抖音风 pmv 作品评选启动</span>
+      </div>
+    </div>
+  </div>
+
+  <header class="pmv-header">
+    <div class="pmv-header-in">
+      <a class="pmv-logo" href="#pmvTop">
+        <span class="pmv-logo-mark">P</span>
+        <span class="pmv-logo-text"><b>抖音风 pmv</b><small>PMV STUDIO</small></span>
+      </a>
+      <button class="pmv-burger" id="pmvBurger" aria-label="展开导航" aria-expanded="false">☰</button>
+      <nav class="pmv-nav" id="pmvNav" aria-label="主导航">
+        <a href="#pmvTop" class="pmv-nav-on">首页</a>
+        <a href="#pmvFocus">焦点影像</a>
+        <a href="#pmvStream">热门作品</a>
+        <a href="#pmvTopics">专题企划</a>
+        <a href="#pmvCreators">创作者</a>
+        <a href="#pmvStory">幕后随笔</a>
+        <a href="#pmvDynamic">企业动态</a>
+        <a href="#pmvFaq">帮助</a>
+        <a href="#pmvContact">联系</a>
+      </nav>
+      <form class="pmv-search" id="pmvSearchForm" role="search">
+        <input type="search" id="pmvSearchInput" placeholder="搜索作品 / 创作者 / 专题" aria-label="站内搜索">
+        <button type="submit">搜索</button>
+      </form>
+    </div>
+  </header>
+</div>
+
+<main id="pmvTop">
+
+  <!-- HERO -->
+  <section class="pmv-hero">
+    <div class="pmv-wrap pmv-hero-grid">
+      <div>
+        <span class="pmv-kicker">品牌官网 · 潮流节拍影像</span>
+        <h1>抖音风 pmv</h1>
+        <p class="pmv-h1-sub">用节拍讲故事的原创影像品牌，让每一次卡点都成为情绪的开场。</p>
+        <p class="pmv-lead">
+          作为深耕潮流影像领域的原创品牌，抖音风 pmv 官方网站聚合高品质节拍剪辑作品、创作者档案与专题企划，
+          为剪辑爱好者与企业伙伴搭建值得信赖的内容生态。我们坚持以用户至上与匠心打磨为底色，
+          让真实的节奏、清晰的画面与有力量的叙事在同一个平台上持续生长。
+        </p>
+        <div class="pmv-hero-btns">
+          <button class="pmv-btn pmv-btn-main" data-pmv-scroll="#pmvStream">浏览热门作品</button>
+          <button class="pmv-btn pmv-btn-ghost" data-pmv-modal="submit">我要投稿</button>
+          <button class="pmv-btn pmv-btn-ghost" data-pmv-share="抖音风 pmv 官方网站">分享品牌</button>
+        </div>
+        <div class="pmv-stats">
+          <div class="pmv-stat"><b>4,860<i>+</i></b><span>原创影像作品</span></div>
+          <div class="pmv-stat"><b>320<i>万+</i></b><span>社区创作者关注</span></div>
+          <div class="pmv-stat"><b>9.2<i>分</i></b><span>用户口碑评分</span></div>
+        </div>
+      </div>
+      <div class="pmv-hero-visual">
+        <div class="pmv-hero-cover">
+          <span class="pmv-hero-badge">焦点首映</span>
+          <img alt="抖音风 pmv 霓虹脉冲节拍剪辑主视觉封面" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cdefs%3E%3ClinearGradient id='g1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%230b1230'/%3E%3Cstop offset='.5' stop-color='%23231b52'/%3E%3Cstop offset='1' stop-color='%23101a2e'/%3E%3C/linearGradient%3E%3ClinearGradient id='g2' x1='0' y1='0' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%2300e5ff'/%3E%3Cstop offset='1' stop-color='%23ff2e88'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1600' height='900' fill='url(%23g1)'/%3E%3Cg opacity='.55'%3E%3Ccircle cx='1240' cy='250' r='230' fill='none' stroke='%2300e5ff' stroke-width='2'/%3E%3Ccircle cx='1240' cy='250' r='160' fill='none' stroke='%238b5cff' stroke-width='2'/%3E%3Ccircle cx='1240' cy='250' r='95' fill='%23ff2e88' opacity='.28'/%3E%3C/g%3E%3Cg opacity='.8'%3E%3Crect x='120' y='560' width='70' height='190' rx='16' fill='url(%23g2)'/%3E%3Crect x='215' y='470' width='70' height='280' rx='16' fill='%2300e5ff' opacity='.75'/%3E%3Crect x='310' y='610' width='70' height='140' rx='16' fill='%23ff2e88' opacity='.8'/%3E%3Crect x='405' y='520' width='70' height='230' rx='16' fill='%238b5cff' opacity='.8'/%3E%3Crect x='500' y='640' width='70' height='110' rx='16' fill='%2300e5ff' opacity='.55'/%3E%3C/g%3E%3Cpath d='M760 470 L900 470 L900 610 L820 610 L820 700 L760 700 Z' fill='none' stroke='url(%23g2)' stroke-width='10' stroke-linejoin='round'/%3E%3Ctext x='120' y='180' font-family='sans-serif' font-size='64' font-weight='bold' fill='%23ffffff' opacity='.92'%3ENeon Pulse%3C/text%3E%3Ctext x='120' y='235' font-family='sans-serif' font-size='26' fill='%2300e5ff' opacity='.85' letter-spacing='6'%3EPMV BEAT EDIT%3C/text%3E%3C/svg%3E">
+          <button class="pmv-play" data-pmv-modal="player" aria-label="播放霓虹脉冲作品">▶</button>
+        </div>
+        <div class="pmv-hero-float">
+          <b>1.8 万</b>
+          <span>本周新增<br>卡点作品</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOCUS -->
+  <section class="pmv-sec" id="pmvFocus">
+    <div class="pmv-wrap">
+      <div class="pmv-sec-head">
+        <h2>焦点影像 · <em>本周官方推荐</em></h2>
+        <p>由品牌编辑部与社区评审共同选出的高品质作品，覆盖节拍剪辑、城市影像与人物纪实。</p>
+      </div>
+      <div class="pmv-focus-grid">
+        <article class="pmv-card">
+          <div class="pmv-cover">
+            <div class="pmv-tagline"><span class="pmv-chip">焦点首推</span><span class="pmv-chip pmv-chip-line">节拍剪辑</span></div>
+            <img alt="霓虹脉冲 都市节奏剪辑作品封面" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cdefs%3E%3CradialGradient id='r1' cx='.3' cy='.2' r='.9'%3E%3Cstop offset='0' stop-color='%233b1f6e'/%3E%3Cstop offset='1' stop-color='%230a1022'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='1600' height='900' fill='url(%23r1)'/%3E%3Cg stroke='%2300e5ff' stroke-width='3' opacity='.5'%3E%3Cpath d='M0 700 L300 520 L620 660 L940 420 L1260 610 L1600 400' fill='none'/%3E%3Cpath d='M0 760 L320 600 L640 720 L960 500 L1280 680 L1600 470' fill='none' stroke='%23ff2e88' opacity='.7'/%3E%3C/g%3E%3Cg fill='%23ff2e88'%3E%3Ccircle cx='420' cy='300' r='10'/%3E%3Ccircle cx='1180' cy='200' r='7'/%3E%3Ccircle cx='880' cy='340' r='5'/%3E%3C/g%3E%3Crect x='120' y='120' width='380' height='12' rx='6' fill='%2300e5ff' opacity='.8'/%3E%3Crect x='120' y='152' width='240' height='12' rx='6' fill='%23ffffff' opacity='.35'/%3E%3Ctext x='120' y='840' font-family='sans-serif' font-size='96' font-weight='bold' fill='%23ffffff' opacity='.94'%3E%E9%9C%93%E8%99%B9%E8%84%89%E5%86%B2%3C/text%3E%3C/svg%3E">
+            <span class="pmv-dur">03:42</span>
+          </div>
+          <div class="pmv-card-body">
+            <h3>霓虹脉冲：把城市夜色切成 128 个节拍</h3>
+            <p>从地铁进站提示音到雨夜路口的脚步声，创作者用环境音采样重建了一条属于自己的城市节奏线，全片卡点密度高却层次分明。</p>
+            <div class="pmv-meta">
+              <span class="pmv-avatar" style="background:linear-gradient(135deg,#00e5ff,#8b5cff)">夜</span>
+              <span>夜航剪辑室</span><span>·</span><span>2 天前</span><span>·</span><span>4.6 万次播放</span>
+            </div>
+            <div class="pmv-actions">
+              <button class="pmv-act" data-pmv-like>♥ <span>3286</span></button>
+              <button class="pmv-act" data-pmv-fav>☆ 收藏</button>
+              <button class="pmv-act" data-pmv-comment="霓虹脉冲：把城市夜色切成 128 个节拍">💬 评论</button>
+              <button class="pmv-act" data-pmv-share="霓虹脉冲：把城市夜色切成 128 个节拍">↗ 分享</button>
+            </div>
+          </div>
+        </article>
+
+        <div class="pmv-focus-side">
+          <article class="pmv-card pmv-mini">
+            <div class="pmv-cover">
+              <div class="pmv-tagline"><span class="pmv-chip pmv-chip-pink">新人榜</span></div>
+              <img alt="第一帧到第一百帧 剪辑节奏拆解封面" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 900'%3E%3Crect width='900' height='900' fill='%23101a2e'/%3E%3Cg fill='none' stroke='%23ff2e88' stroke-width='4' opacity='.8'%3E%3Crect x='120' y='180' width='660' height='540' rx='24'/%3E%3Cpath d='M120 320 H780 M120 460 H780 M120 600 H780 M340 180 V720 M560 180 V720' opacity='.35'/%3E%3C/g%3E%3Cg fill='%2300e5ff'%3E%3Crect x='180' y='380' width='90' height='60' rx='8'/%3E%3Crect x='400' y='240' width='90' height='60' rx='8' opacity='.7'/%3E%3Crect x='620' y='520' width='90' height='60' rx='8' opacity='.55'/%3E%3C/g%3E%3Ctext x='120' y='110' font-family='sans-serif' font-size='54' font-weight='bold' fill='%23ffffff'%3E%20100 Frames%3C/text%3E%3C/svg%3E">
+              <span class="pmv-dur">12:08</span>
+            </div>
+            <div class="pmv-card-body">
+              <h3>第一帧到第一百帧：卡点剪辑节奏拆解</h3>
+              <p>逐帧讲解重音落点与镜头长短的关系，适合刚接触节拍剪辑的新手。</p>
+              <div class="pmv-meta">
+                <span class="pmv-avatar" style="background:linear-gradient(135deg,#ff2e88,#8b5cff)">帧</span>
+                <span>帧率研究所</span><span>·</span><span>1.2 万次播放</span>
+              </div>
+              <div class="pmv-actions">
+                <button class="pmv-act" data-pmv-like>♥ <span>986</span></button>
+                <button class="pmv-act" data-pmv-fav>☆ 收藏</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="pmv-card pmv-mini">
+            <div class="pmv-cover">
+              <div class="pmv-tagline"><span class="pmv-chip">人物访谈</span></div>
+              <img alt="凌晨三点仍在剪片的人 创作者访谈封面" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 900'%3E%3Cdefs%3E%3ClinearGradient id='g3' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23203a63'/%3E%3Cstop offset='1' stop-color='%230b1220'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='900' height='900' fill='url(%23g3)'/%3E%3Ccircle cx='450' cy='380' r='150' fill='%2300e5ff' opacity='.18'/%3E%3Ccircle cx='450' cy='360' r='96' fill='%23ff2e88' opacity='.28'/%3E%3Crect x='250' y='560' width='400' height='26' rx='13' fill='%23ffffff' opacity='.22'/%3E%3Crect x='300' y='610' width='300' height='18' rx='9' fill='%2300e5ff' opacity='.5'/%3E%3Ctext x='120' y='140' font-family='sans-serif' font-size='48' font-weight='bold' fill='%23ffffff' opacity='.9'%3E3:00 AM%3C/text%3E%3C/svg%3E">
+              <span class="pmv-dur">08:25</span>
+            </div>
+            <div class="pmv-card-body">
+              <h3>凌晨三点仍在剪片的人</h3>
+              <p>与三位长期更新节拍影像的创作者聊了聊灵感、瓶颈与坚持。</p>
+              <div class="pmv-meta">
+                <span class="pmv-avatar" style="background:linear-gradient(135deg,#8b5cff,#00e5ff)">访</span>
+                <span>品牌编辑部</span><span>·</span><span>2.4 万次播放</span>
+              </div>
+              <div class="pmv-actions">
+                <button class="pmv-act" data-pmv-like>♥ <span>1420</span></button>
+                <button class="pmv-act" data-pmv-fav>☆ 收藏</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STREAM -->
+  <section class="pmv-sec" id="pmvStream">
+    <div class="pmv-wrap">
+      <div class="pmv-sec-head">
+        <h2>热门作品流 · <em>持续更新的精品内容</em></h2>
+        <p>竖向节拍、横版叙事、实验剪辑三条内容线并行，按题材筛选你想看的方向。</p>
+      </div>
+      <div class="pmv-filter" id="pmvFilter" role="group" aria-label="题材筛选">
+        <button type="button" class="pmv-filter-on" data-pmv-filter="all">全部</button>
+        <button type="button" data-pmv-filter="beat">节拍剪辑</button>
+        <button type="button" data-pmv-filter="city">城市影像</button>
+        <button type="button" data-pmv-filter="craft">创作幕后</button>
+        <button type="button" data-pmv-filter="people">人物纪实</button>
+      </div>
+      <div class="pmv-stream" id="pmvStreamGrid">
+        <article class="pmv-card pmv-video" data-pmv-cat="beat">
+          <div class="pmv-cover">
+            <div class="pmv-tagline"><span class="pmv-chip">节拍剪辑</span></div>
+            <img alt="把整条街剪成一段鼓点 作品封面" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Crect width='1600' height='900' fill='%23151233'/%3E%3Cg fill='%2300e5ff'%3E%3Crect x='140' y='620' width='52' height='120' rx='12'/%3E%3Crect x='214' y='540' width='52' height='200' rx='12' opacity='.8'/%3E%3Crect x='288' y='660' width='52' height='80' rx='12'/%3E%3Crect x='362' y='480' width='52' height='260' rx='12' opacity='.7'/%3E%3C/g%3E%3Cg fill='%23ff2e88' opacity='.75'%3E%3Crect x='1100' y='560' width='52' height='180' rx='12'/%3E%3Crect x='1174' y='470' width='52' height='270' rx='12'/%3E%3Crect x='1248' y='640' width='52' height='100' rx='12'/%3E%3C/g%3E%3Ccircle cx='800' cy='420' r='160' fill='none' stroke='%238b5cff' stroke-width='6' opacity='.7'/%3E%3Cpath d='M760 340 L880 420 L760 500 Z' fill='%23ffffff' opacity='.85'/%3E%3Ctext x='140' y='150' font-family='sans-serif' font-size='60' font-weight='bold' fill='%23ffffff' opacity='.92'%3EStreet Beat%3C/text%3E%3C/svg%3E">
+            <span class="pmv-dur">02:16</span>
+          </div>
+          <div class="pmv-card-body">
+            <h3>把整条街剪成一段鼓点</h3>
+            <p>用 46 个街景镜头拼出一段 128BPM 的节奏，镜头切换与鼓点严丝合缝。</p>
+            <div class="pmv-meta"><span class="pmv-avatar" style="background:linear-gradient(135deg,#00e5ff,#8b5cff)">街</span><span>街角采样师</span><span>·</span><span>3.1 万播放</span></div>
+            <div class="pmv-actions">
+              <button class="pmv-act" data-pmv-like>♥ <span>2210</span></button>
+              <button class="pmv-act" data-pmv-fav>☆ 收藏</button>
+              <button class="pmv-act" data-pmv-share="把整条街剪成一段鼓点">↗ 分享</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="pmv-card pmv-video" data-pmv-cat="city">
+          <div class="pmv-cover">
+            <div class="pmv-tagline"><span class="pmv-chip pmv-chip-line">城市影像</span></div>
+            <img alt="凌晨四点的地铁站 城市影像封面" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cdefs%3E%3ClinearGradient id='g4' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23172645'/%3E%3Cstop offset='1' stop-color='%2309101d'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1600' height='900' fill='url(%23g4)'/%3E%3Cg stroke='%237fa2dd' stroke-width='3' opacity='.55'%3E%3Cpath d='M500 0 L900 900'/%3E%3Cpath d='M700 0 L1100 900'/%3E%3Cpath d='M900 0 L1300 900'/%3E%3C/g%3E%3Crect x='0' y='740' width='1600' height='160' fill='%23070c16'/%3E%3Crect x='640' y='700' width='320' height='14' rx='7' fill='%2300e5ff' opacity='.7'/%3E%3Ccircle cx='800' cy='560' r='90' fill='%23ff2e88' opacity='.2'/%3E%3Ctext x='120' y='170' font-family='sans-serif' font-size='56' font-weight='bold' fill='%23e8f0ff' opacity='.9'%3E4:00 AM LINE%3C/text%3E%3C/svg%3E">
+            <span class="pmv-dur">05:04</span>
+          </div>
+          <div class="pmv-card-body">
+            <h3>凌晨四点的地铁站</h3>
+            <p>空站台的回声被处理成低频铺底，镜头缓慢推近，节奏在安静里生长。</p>
+            <div class="pmv-meta"><span class="pmv-avatar" style="background:linear-gradient(135deg,#8b5cff,#00e5ff)">地</span><span>站台观察者</span><span>·</span><span>1.9 万播放</span></div>
+            <div class="pmv-actions">
+              <button class="pmv-act" data-pmv-like>♥ <span>1350</span></button>
+              <button class="pmv-act" data-pmv-fav>☆ 收藏</button>
+              <button class="pmv-act" data-pmv-share="凌晨四点的地铁站">↗ 分享</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="pmv-card pmv-video" data-pmv-cat="craft">
+          <div class="pmv-cover">
+            <div class="pmv-tagline"><span class="pmv-chip pmv-chip-pink">创作幕后</span></div>
+            <img alt="一个镜头七十二次重剪 创作幕后封面" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Crect width='1600' height='900' fill='%231a1430'/%3E%3Cg fill='none' stroke='%2300e5ff' stroke-width='4' opacity='.7'%3E%3Crect x='200' y='220' width='1200' height='480' rx='18'/%3E%3Cpath d='M200 460 H1400' opacity='.4'/%3E%3C/g%3E%3Cg fill='%23ff2e88'%3E%3Crect x='260' y='300' width='180' height='90' rx='8' opacity='.8'/%3E%3Crect x='500' y='320' width='260' height='60' rx='8' opacity='.55'/%3E%3Crect x='820' y='290' width='140' height='100' rx='8' opacity='.7'/%3E%3C/g%3E%3Cg fill='%238b5cff'%3E%3Crect x='260' y='520' width='340' height='70' rx='8' opacity='.65'/%3E%3Crect x='660' y='540' width='220' height='50' rx='8' opacity='.5'/%3E%3Crect x='940' y='510' width='380' height='80' rx='8' opacity='.7'/%3E%3C/g%3E%3Ctext x='200' y='170' font-family='sans-serif' font-size='54' font-weight='bold' fill='%23ffffff' opacity='.92'%3E72 Takes%3C/text%3E%3C/svg%3E">
+            <span class="pmv-dur">14:30</span>
+          </div>
+          <div class="pmv-card-body">
+            <h3>一个镜头七十二次重剪</h3>
+            <p>完整展示一支节拍短片的工程文件，讲清楚为什么要反复推翻自己。</p>
+            <div class="pmv-meta"><span class="pmv-avatar" style="background:linear-gradient(135deg,#ff2e88,#8b5cff)">工</span><span>工程文件控</span><span>·</span><span>2.7 万播放</span></div>
+            <div class="pmv-actions">
+              <button class="pmv-act" data-pmv-like>♥ <span>1876</span></button>
+              <button class="pmv-act" data-pmv-fav>☆ 收藏</button>
+              <button class="pmv-act" data-pmv-share="一个镜头七十二次重剪">↗ 分享</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="pmv-card pmv-video" data-pmv-cat="people">
+          <div class="pmv-cover">
+            <div class="pmv-tagline"><span class="pmv-chip pmv-chip-line">人物纪实</span></div>
+            <img alt="给外婆拍一支节拍短片 人物纪实封面" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cdefs%3E%3ClinearGradient id='g5' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232b1b3e'/%3E%3Cstop offset='1' stop-color='%23101628'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1600' height='900' fill='url(%23g5)'/%3E%3Ccircle cx='800' cy='400' r='210' fill='%23ff2e88' opacity='.16'/%3E%3Ccircle cx='800' cy='370' r='130' fill='none' stroke='%2300e5ff' stroke-width='5' opacity='.6'/%3E%3Cpath d='M640 620 Q800 520 960 620' fill='none' stroke='%23ffffff' stroke-width='4' opacity='.4'/%3E%3Ctext x='120' y='160' font-family='sans-serif' font-size='56' font-weight='bold' fill='%23ffffff' opacity='.9'%3EGrandma Beat%3C/text%3E%3C/svg%3E">
+            <span class="pmv-dur">06:12</span>
+          </div>
+          <div class="pmv-card-body">
+            <h3>给外婆拍一支节拍短片</h3>
+            <p>把老式缝纫机的声音采样成鼓组，让家人的日常变成一段有韵律的影像。</p>
+            <div class="pmv-meta"><span class="pmv-avatar" style="background:linear-gradient(135deg,#00e5ff,#ff2e88)">家</span><span>家庭影像计划</span><span>·</span><span>5.2 万播放</span></div>
+            <div class="pmv-actions">
+              <button class="pmv-act" data-pmv-like>♥ <span>4120</span></button>
+              <button class="pmv-act" data-pmv-fav>☆ 收藏</button>
+              <button class="pmv-act" data-pmv-share="给外婆拍一支节拍短片">↗ 分享</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="pmv-card pmv-video" data-pmv-cat="beat">
+          <div class="pmv-cover">
+            <div class="pmv-tagline"><span class="pmv-chip">节拍剪辑</span></div>
+            <img alt="三分钟三十六个转场 纯技巧向封面" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Crect width='1600' height='900' fill='%230d1a2c'/%3E%3Cg fill='none' stroke='%2300e5ff' stroke-width='3' opacity='.6'%3E%3Cpath d='M0 450 H1600'/%3E%3Cpath d='M800 0 V900'/%3E%3C/g%3E%3Cg%3E%3Crect x='180' y='200' width='300' height='180' rx='14' fill='%23ff2e88' opacity='.24'/%3E%3Crect x='520' y='380' width='340' height='200' rx='14' fill='%238b5cff' opacity='.26'/%3E%3Crect x='900' y='180' width='260' height='220' rx='14' fill='%2300e5ff' opacity='.22'/%3E%3Crect x='1160' y='430' width='300' height='180' rx='14' fill='%23ff2e88' opacity='.2'/%3E%3C/g%3E%3Ctext x='180' y='160' font-family='sans-serif' font-size='52' font-weight='bold' fill='%23ffffff' opacity='.9'%3E36 Transitions%3C/text%3E%3C/svg%3E">
+            <span class="pmv-dur">09:48</span>
+          </div>
+          <div class="pmv-card-body">
+            <h3>三分钟三十六个转场</h3>
+            <p>从遮罩到速度曲线，把高频转场拆成可以复用的模板思路。</p>
+            <div class="pmv-meta"><span class="pmv-avatar" style="background:linear-gradient(135deg,#8b5cff,#ff2e88)">转</span><span>转场手册</span><span>·</span><span>3.8 万播放</span></div>
+            <div class="pmv-actions">
+              <button class="pmv-act" data-pmv-like>♥ <span>2640</span></button>
+              <button class="pmv-act" data-pmv-fav>☆ 收藏</button>
+              <button class="pmv-act" data-pmv-share="三分钟三十六个转场">↗ 分享</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="pmv-card pmv-video" data-pmv-cat="city">
+          <div class="pmv-cover">
+            <div class="pmv-tagline"><span class="pmv-chip pmv-chip-line">城市影像</span></div>
+            <img alt="雨天的公交站台慢镜头封面" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cdefs%3E%3ClinearGradient id='g6' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23162c44'/%3E%3Cstop offset='1' stop-color='%23091018'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1600' height='900' fill='url(%23g6)'/%3E%3Cg stroke='%2387b6e8' stroke-width='2' opacity='.4'%3E%3Cpath d='M300 0 L220 900'/%3E%3Cpath d='M500 0 L440 900'/%3E%3Cpath d='M700 0 L660 900'/%3E%3Cpath d='M900 0 L880 900'/%3E%3Cpath d='M1100 0 L1100 900'/%3E%3Cpath d='M1300 0 L1320 900'/%3E%3C/g%3E%3Crect x='1080' y='300' width='300' height='340' rx='16' fill='%2300e5ff' opacity='.12'/%3E%3Ccircle cx='1230' cy='470' r='60' fill='%23ff2e88' opacity='.3'/%3E%3Ctext x='120' y='150' font-family='sans-serif' font-size='56' font-weight='bold' fill='%23dce9ff' opacity='.9'%3ERainy Stop%3C/text%3E%3C/svg%3E">
+            <span class="pmv-dur">04:20</span>
+          </div>
+          <div class="pmv-card-body">
+            <h3>雨天的公交站台</h3>
+            <p>没有一句台词，只靠雨声与车灯节奏，记录一个普通的傍晚。</p>
+            <div class="pmv-meta"><span class="pmv-avatar" style="background:linear-gradient(135deg,#00e5ff,#8b5cff)">雨</span><span>雨季记录员</span><span>·</span><span>1.4 万播放</span></div>
+            <div class="pmv-actions">
+              <button class="pmv-act" data-pmv-like>♥ <span>920</span></button>
+              <button class="pmv-act" data-pmv-fav>☆ 收藏</button>
+              <button class="pmv-act" data-pmv-share="雨天的公交站台">↗ 分享</button>
+            </div>
+          </div>
+        </article>
+      </div>
+      <p class="pmv-empty" id="pmvEmpty">该题材下的作品正在整理中，欢迎先浏览其他方向。</p>
+    </div>
+  </section>
+
+  <!-- TOPICS -->
+  <section class="pmv-sec" id="pmvTopics">
+    <div class="pmv-wrap">
+      <div class="pmv-sec-head">
+        <h2>专题企划 · <em>一个有始有终的创作命题</em></h2>
+        <p>每季度围绕一个主题征集作品，由编辑部整理成合辑，并开放社区投票。</p>
+      </div>
+      <div class="pmv-topics">
+        <div class="pmv-topic" data-pmv-modal="topic">
+          <img alt="霓虹脉冲专题 都市夜色节拍封面" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 800'%3E%3Crect width='600' height='800' fill='%23181338'/%3E%3Ccircle cx='300' cy='300' r='180' fill='none' stroke='%2300e5ff' stroke-width='3' opacity='.6'/%3E%3Ccircle cx='300' cy='300' r='110' fill='%23ff2e88' opacity='.25'/%3E%3Cpath d='M60 620 L180 520 L300 600 L420 480 L540 560' fill='none' stroke='%2300e5ff' stroke-width='4' opacity='.8'/%3E%3C/svg%3E">
+          <div class="pmv-topic-mask">
+            <span class="pmv-topic-status">征集中</span>
+            <b>霓虹脉冲</b>
+            <span>都市夜色的节拍叙事</span>
+          </div>
+        </div>
+        <div class="pmv-topic" data-pmv-modal="topic">
+          <img alt="日常采样专题 生活声音节拍封面" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 800'%3E%3Crect width='600' height='800' fill='%2322182c'/%3E%3Cg fill='%2300e5ff' opacity='.7'%3E%3Crect x='80' y='300' width='40' height='200' rx='10'/%3E%3Crect x='150' y='240' width='40' height='260' rx='10'/%3E%3Crect x='220' y='340' width='40' height='160' rx='10'/%3E%3Crect x='290' y='200' width='40' height='300' rx='10'/%3E%3C/g%3E%3Cg fill='%23ff2e88' opacity='.6'%3E%3Crect x='360' y='320' width='40' height='180' rx='10'/%3E%3Crect x='430' y='260' width='40' height='240' rx='10'/%3E%3Crect x='500' y='360' width='40' height='140' rx='10'/%3E%3C/g%3E%3C/svg%3E">
+          <div class="pmv-topic-mask">
+            <span class="pmv-topic-status">已上线</span>
+            <b>日常采样</b>
+            <span>把生活声音做成鼓组</span>
+          </div>
+        </div>
+        <div class="pmv-topic" data-pmv-modal="topic">
+          <img alt="一镜到底专题 长镜头与节拍封面" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 800'%3E%3Crect width='600' height='800' fill='%23142034'/%3E%3Cpath d='M100 660 C100 420 200 420 200 300 C200 220 320 200 320 320 C320 440 460 420 460 260' fill='none' stroke='%238b5cff' stroke-width='8' stroke-linecap='round' opacity='.8'/%3E%3Ccircle cx='460' cy='260' r='16' fill='%23ff2e88'/%3E%3C/svg%3E">
+          <div class="pmv-topic-mask">
+            <span class="pmv-topic-status pmv-status-soon">筹备中</span>
+            <b>一镜到底</b>
+            <span>长镜头里的节奏控制</span>
+          </div>
+        </div>
+        <div class="pmv-topic" data-pmv-modal="topic">
+          <img alt="新人首作专题 第一次节拍剪辑封面" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 800'%3E%3Crect width='600' height='800' fill='%23291a2e'/%3E%3Ccircle cx='300' cy='330' r='120' fill='none' stroke='%2300e5ff' stroke-width='4' opacity='.7'/%3E%3Cpath d='M270 270 L360 330 L270 390 Z' fill='%23ff2e88' opacity='.85'/%3E%3Crect x='120' y='560' width='360' height='16' rx='8' fill='%23ffffff' opacity='.25'/%3E%3Crect x='160' y='600' width='280' height='12' rx='6' fill='%2300e5ff' opacity='.4'/%3E%3C/svg%3E">
+          <div class="pmv-topic-mask">
+            <span class="pmv-topic-status">征集中</span>
+            <b>新人首作</b>
+            <span>把第一支片子交给社区</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CREATORS -->
+  <section class="pmv-sec" id="pmvCreators">
+    <div class="pmv-wrap">
+      <div class="pmv-sec-head">
+        <h2>创作者矩阵 · <em>让专业被看见</em></h2>
+        <p>官方认证的创作者，覆盖节拍剪辑、镜头语言、声音设计与叙事结构等方向。</p>
+      </div>
+      <div class="pmv-creators">
+        <article class="pmv-creator">
+          <div class="pmv-creator-top">
+            <span class="pmv-big-avatar" style="background:linear-gradient(135deg,#00e5ff,#8b5cff)">夜</span>
+            <div><b>夜航剪辑室</b><small>节拍剪辑 · 城市影像</small></div>
+          </div>
+          <p>擅长用环境音搭建节奏骨架，作品节奏密度高、情绪克制，是社区里公认的节拍结构参考。</p>
+          <div class="pmv-creator-nums"><span>作品 <b>126</b></span><span>粉丝 <b>18.4 万</b></span></div>
+          <div class="pmv-actions"><button class="pmv-act" data-pmv-author="夜航剪辑室">查看档案</button></div>
+        </article>
+        <article class="pmv-creator">
+          <div class="pmv-creator-top">
+            <span class="pmv-big-avatar" style="background:linear-gradient(135deg,#ff2e88,#8b5cff)">帧</span>
+            <div><b>帧率研究所</b><small>教程干货 · 实用技巧</small></div>
+          </div>
+          <p>以拆解式教学见长，把抽象的节奏感转化成可复现的步骤，被大量新手创作者收藏。</p>
+          <div class="pmv-creator-nums"><span>作品 <b>88</b></span><span>粉丝 <b>11.2 万</b></span></div>
+          <div class="pmv-actions"><button class="pmv-act" data-pmv-author="帧率研究所">查看档案</button></div>
+        </article>
+        <article class="pmv-creator">
+          <div class="pmv-creator-top">
+            <span class="pmv-big-avatar" style="background:linear-gradient(135deg,#8b5cff,#00e5ff)">站</span>
+            <div><b>站台观察者</b><small>城市探索 · 治愈影像</small></div>
+          </div>
+          <p>长期记录城市里的空白时段，作品安静而有力量，多次入选官方月度精选合辑。</p>
+          <div class="pmv-creator-nums"><span>作品 <b>74</b></span><span>粉丝 <b>9.6 万</b></span></div>
+          <div class="pmv-actions"><button class="pmv-act" data-pmv-author="站台观察者">查看档案</button></div>
+        </article>
+        <article class="pmv-creator">
+          <div class="pmv-creator-top">
+            <span class="pmv-big-avatar" style="background:linear-gradient(135deg,#00e5ff,#ff2e88)">声</span>
+            <div><b>声音折纸</b><small>声音设计 · 创作幕后</small></div>
+          </div>
+          <p>把采样、拟音与音乐编制融合进影像，分享大量可商用素材的整理思路与使用边界。</p>
+          <div class="pmv-creator-nums"><span>作品 <b>63</b></span><span>粉丝 <b>7.8 万</b></span></div>
+          <div class="pmv-actions"><button class="pmv-act" data-pmv-author="声音折纸">查看档案</button></div>
+        </article>
+        <article class="pmv-creator">
+          <div class="pmv-creator-top">
+            <span class="pmv-big-avatar" style="background:linear-gradient(135deg,#ff2e88,#00e5ff)">家</span>
+            <div><b>家庭影像计划</b><small>人物纪实 · 情感故事</small></div>
+          </div>
+          <p>用镜头保存家人日常，作品真实温暖，带动社区发起多轮家庭影像记录挑战。</p>
+          <div class="pmv-creator-nums"><span>作品 <b>52</b></span><span>粉丝 <b>6.1 万</b></span></div>
+          <div class="pmv-actions"><button class="pmv-act" data-pmv-author="家庭影像计划">查看档案</button></div>
+        </article>
+        <article class="pmv-creator">
+          <div class="pmv-creator-top">
+            <span class="pmv-big-avatar" style="background:linear-gradient(135deg,#8b5cff,#ff2e88)">转</span>
+            <div><b>转场手册</b><small>深度测评 · 技术拆解</small></div>
+          </div>
+          <p>专注转场与速度曲线的工程化研究，测评结论严谨，是工具选型时值得信赖的参考来源。</p>
+          <div class="pmv-creator-nums"><span>作品 <b>97</b></span><span>粉丝 <b>13.5 万</b></span></div>
+          <div class="pmv-actions"><button class="pmv-act" data-pmv-author="转场手册">查看档案</button></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY + RANK -->
+  <section class="pmv-sec" id="pmvStory">
+    <div class="pmv-wrap">
+      <div class="pmv-sec-head">
+        <h2>幕后随笔 · <em>创作之外的那部分</em></h2>
+        <p>影像之外的文字记录，来自创作者与编辑部的真实手记。</p>
+      </div>
+      <div class="pmv-story-grid">
+        <article class="pmv-story">
+          <h3>为什么我总在等一个声音</h3>
+          <p>有一段时间，我习惯在下班后绕路经过同一个路口，只为了听那声提示音。它出现得不规律，却和我的呼吸节奏意外地吻合。后来我把这段声音录下来，倒放、叠加、压缩，做成一支短片的第一拍。节拍从来不是被设计出来的，它更像是在等待被发现。</p>
+          <small>—— 夜航剪辑室 · 创作手记</small>
+        </article>
+        <article class="pmv-story">
+          <h3>把家人的日常放进时间轴</h3>
+          <p>最开始只是想留一段外婆缝东西的画面。剪到第三版时，我发现缝纫机的声音天然带着稳定的频率，于是把它当作底鼓，把翻页、倒水、开门的声音依次铺上去。片子完成后，家里人看了两遍，谁也没说话，但都笑了。</p>
+          <small>—— 家庭影像计划 · 创作手记</small>
+        </article>
+      </div>
+
+      <div class="pmv-sec-head" style="margin-top:44px">
+        <h2>社区数据 · <em>热度与口碑同步更新</em></h2>
+        <p>榜单每周一更新，综合播放、收藏与社区投票计算。</p>
+      </div>
+      <div class="pmv-rank">
+        <div class="pmv-rank-col">
+          <h3>本周热度榜</h3>
+          <ol>
+            <li>霓虹脉冲：把城市夜色切成 128 个节拍</li>
+            <li>给外婆拍一支节拍短片</li>
+            <li>把整条街剪成一段鼓点</li>
+            <li>三分钟三十六个转场</li>
+            <li>凌晨四点的地铁站</li>
+          </ol>
+        </div>
+        <div class="pmv-rank-col">
+          <h3>新人新作榜</h3>
+          <ol>
+            <li>第一帧到第一百帧：卡点剪辑节奏拆解</li>
+            <li>宿舍里的三分钟短片</li>
+            <li>用手机拍出电影感开场</li>
+            <li>我把闹钟做成了底鼓</li>
+            <li>十分钟完成一支竖屏节拍片</li>
+          </ol>
+        </div>
+        <div class="pmv-rank-col">
+          <h3>口碑推荐榜</h3>
+          <ol>
+            <li>凌晨三点仍在剪片的人</li>
+            <li>一个镜头七十二次重剪</li>
+            <li>雨天的公交站台</li>
+            <li>声音的边界：采样伦理讨论</li>
+            <li>慢下来，再快起来</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANALYSIS -->
+  <section class="pmv-sec" id="pmvAbout">
+    <div class="pmv-wrap">
+      <div class="pmv-analysis">
+        <h2>关于抖音风 pmv：一个品牌官网如何承载一种节拍语言</h2>
+        <p>抖音风 pmv 并不是一个单纯的标签，而是一种在短视频语境里生长出来的影像语法：短促、直给、节奏清晰，同时要求创作者在极短的时间里完成情绪铺设与视觉记忆点的建立。作为专注这一方向的原创影像品牌，我们把官方网站定位为内容生态的中枢，而不是作品的简单陈列柜。</p>
+        <p>从行业视角看，节拍剪辑的入门门槛并不高，但真正形成稳定品质的作品并不常见。难点不在于软件操作，而在于<strong>对节奏的判断力</strong>与<strong>对素材的取舍能力</strong>。因此，我们在内容结构上刻意做了分层：新手可以沿着教程与拆解路径建立基本认知，进阶创作者可以在幕后工程与访谈里找到方法论，企业与机构则可以通过专题合作与品牌故事栏目理解这一内容形态的商业价值。</p>
+        <h3>内容生态：让创作者、观众与品牌各得其所</h3>
+        <p>平台目前设有焦点影像、热门作品流、专题企划、创作者矩阵、幕后随笔与企业动态六个内容板块。焦点影像由编辑部与社区评审共同推荐，强调品质与多样性；热门作品流按题材开放筛选，鼓励不同风格的创作者被看见；专题企划以季度为单位发布命题，让分散的创作形成合力。我们相信，一个持续运营的社区，需要的不只是流量入口，更是清晰的成长路径。</p>
+        <h3>创作方法：把感受翻译成时间轴</h3>
+        <p>在我们的观察里，优秀的节拍作品通常具备三个共同点：第一，<strong>声音先行</strong>，先确定节奏骨架，再安排画面；第二，<strong>镜头有呼吸</strong>，长镜头与短切交替出现，避免全程高压；第三，<strong>情绪有落点</strong>，在密集卡点之后留出一个安静的停顿。这些方法并不神秘，但需要在大量练习中形成肌肉记忆。官方网站的教程与拆解栏目，正是为此而设。</p>
+        <h3>品牌理念：真实、温暖、有力量</h3>
+        <p>我们坚持真实优先。节拍可以强烈，但不能掩盖内容的空洞；技术可以炫目，但不能替代叙事。我们更愿意推荐那些从生活细节出发的作品——一段地铁进站声、一台缝纫机的转动、一场雨落在站台上的声音。正是这些具体而微的素材，让影像拥有了陪伴感与力量感。</p>
+        <h3>面向未来：持续运营与开放合作</h3>
+        <p>接下来，品牌将保持每月一次的专题征集、每季度一次的线下创作者交流，并逐步开放企业合作通道，为品牌方提供节拍影像的内容共创方案。我们希望这个官方网站既是展示窗口，也是协作入口。无论你是刚刚拿起相机的学生，还是已经稳定更新的创作者，都可以在这里找到属于自己的位置。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DYNAMIC + PARTNERS -->
+  <section class="pmv-sec" id="pmvDynamic">
+    <div class="pmv-wrap">
+      <div class="pmv-sec-head">
+        <h2>企业动态 · <em>官方发布与更新记录</em></h2>
+        <p>品牌资讯、活动报名与内容更新，统一在此发布。</p>
+      </div>
+      <div class="pmv-timeline">
+        <div class="pmv-timeline-item">
+          <time>2026 / 11 / 16</time>
+          <h3>「节拍剪辑挑战赛」报名通道开启</h3>
+          <p>本届挑战赛以“日常采样”为主题，鼓励创作者从生活声音中提取节奏，投稿截止至 12 月 20 日。</p>
+        </div>
+        <div class="pmv-timeline-item">
+          <time>2026 / 11 / 09</time>
+          <h3>月度精选合辑《霓虹脉冲》正式发布</h3>
+          <p>合辑收录 24 支城市夜色题材作品，配套发布节奏结构说明文档，可在专题页查看。</p>
+        </div>
+        <div class="pmv-timeline-item">
+          <time>2026 / 10 / 28</time>
+          <h3>创作者学院上线 6 节节奏课程</h3>
+          <p>课程覆盖节拍识别、速度曲线、声音分层与转场衔接，面向所有注册创作者开放。</p>
+        </div>
+        <div class="pmv-timeline-item">
+          <time>2026 / 10 / 12</time>
+          <h3>社区投票：年度最佳节拍作品评选启动</h3>
+          <p>由社区投票与评审团共同评选，结果将于年末公布，入选作品将获得官方推荐位。</p>
+        </div>
+      </div>
+
+      <div class="pmv-sec-head" style="margin-top:44px">
+        <h2>合作品牌 · <em>共同拓展影像边界</em></h2>
+        <p>我们与设备、音乐与内容机构保持长期合作，为创作者提供更完整的支持。</p>
+      </div>
+      <div class="pmv-partners">
+        <div class="pmv-partner">光影器材社</div>
+        <div class="pmv-partner">节拍音乐库</div>
+        <div class="pmv-partner">城市影像馆</div>
+        <div class="pmv-partner">青年创作基金</div>
+        <div class="pmv-partner">声音实验室</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="pmv-sec" id="pmvReviews">
+    <div class="pmv-wrap">
+      <div class="pmv-sec-head">
+        <h2>用户评价 · <em>来自社区的真实反馈</em></h2>
+        <p>不同身份的用户，从不同角度谈这个平台带给他们的变化。</p>
+      </div>
+      <div class="pmv-reviews">
+        <div class="pmv-review">
+          <div class="pmv-review-top"><span class="pmv-avatar" style="background:linear-gradient(135deg,#00e5ff,#8b5cff)">阿</span><b>阿泽</b><small>学生创作者</small></div>
+          <div class="pmv-review-stars">★★★★★</div>
+          <p>教程拆解得非常具体，第一次知道卡点不是凭感觉硬凑，而是有落点逻辑的。</p>
+        </div>
+        <div class="pmv-review">
+          <div class="pmv-review-top"><span class="pmv-avatar" style="background:linear-gradient(135deg,#ff2e88,#8b5cff)">林</span><b>林小满</b><small>自由剪辑师</small></div>
+          <div class="pmv-review-stars">★★★★★</div>
+          <p>专题企划的命题很克制，不会为了热度堆话题，作品整体质量在同类社区里算高的。</p>
+        </div>
+        <div class="pmv-review">
+          <div class="pmv-review-top"><span class="pmv-avatar" style="background:linear-gradient(135deg,#8b5cff,#00e5ff)">老</span><b>老周</b><small>品牌内容负责人</small></div>
+          <div class="pmv-review-stars">★★★★☆</div>
+          <p>作为企业方，我更看重合作流程的清晰度。这里的对接很直接，需求沟通没有多余环节。</p>
+        </div>
+        <div class="pmv-review">
+          <div class="pmv-review-top"><span class="pmv-avatar" style="background:linear-gradient(135deg,#00e5ff,#ff2e88)">声</span><b>声控小鹿</b><small>声音爱好者</small></div>
+          <div class="pmv-review-stars">★★★★★</div>
+          <p>声音设计栏目是我每周必看的部分，尤其是那期讲采样伦理的讨论，很有分量。</p>
+        </div>
+        <div class="pmv-review">
+          <div class="pmv-review-top"><span class="pmv-avatar" style="background:linear-gradient(135deg,#ff2e88,#00e5ff)">花</span><b>花卷不加糖</b><small>生活记录用户</small></div>
+          <div class="pmv-review-stars">★★★★☆</div>
+          <p>本来只是随便看看，后来忍不住自己拍了一条，投稿流程比想象中简单很多。</p>
+        </div>
+        <div class="pmv-review">
+          <div class="pmv-review-top"><span class="pmv-avatar" style="background:linear-gradient(135deg,#8b5cff,#ff2e88)">木</span><b>木木夕</b><small>新人创作者</small></div>
+          <div class="pmv-review-stars">★★★★★</div>
+          <p>新人榜给了我很大信心。第一次投稿就被放进了推荐位，评论区也很友善。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="pmv-sec" id="pmvFaq">
+    <div class="pmv-wrap">
+      <div class="pmv-sec-head">
+        <h2>帮助中心 · <em>常见问题</em></h2>
+        <p>关于投稿、版权与合作的常见疑问，点击问题展开查看。</p>
+      </div>
+      <div class="pmv-faq">
+        <details>
+          <summary>如何向品牌投稿自己的节拍作品？</summary>
+          <p>点击页面顶部或联系区域的“我要投稿”，填写作品链接、时长与题材说明即可。编辑部会在 3 个工作日内完成初筛，通过后会邮件通知并安排上线排期。</p>
+        </details>
+        <details>
+          <summary>作品需要满足哪些基本要求？</summary>
+          <p>建议画幅为竖屏或横屏的完整成片，时长 15 秒至 15 分钟，画面清晰、无第三方平台水印，音乐与素材需具备合法授权。</p>
+        </details>
+        <details>
+          <summary>音乐与音效素材如何确保合规？</summary>
+          <p>请优先使用平台合作音乐库或自行创作、购买授权的素材。我们会要求投稿者提供素材来源说明，未明确授权的作品将暂缓上线。</p>
+        </details>
+        <details>
+          <summary>专题企划的征集周期是多久？</summary>
+          <p>专题通常以季度为周期，征集期约为四周，之后进入评审与合辑制作阶段。当期专题状态会显示在专题卡片上。</p>
+        </details>
+        <details>
+          <summary>企业合作可以提出哪些类型的需求？</summary>
+          <p>包括品牌节拍短片共创、产品节奏化展示、创作者联动企划与线下交流活动等。我们会在收到需求后提供方向建议与执行排期。</p>
+        </details>
+        <details>
+          <summary>创作者认证有什么实际权益？</summary>
+          <p>认证创作者可获得作品优先推荐、课程资源、专题联合署名，并有机会参与品牌合作项目。认证入口在创作者档案页开放。</p>
+        </details>
+        <details>
+          <summary>如何反馈问题或举报不当内容？</summary>
+          <p>每张作品卡片都提供分享与反馈入口，也可以在联系区域提交详细说明。我们会在核实后尽快处理。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="pmv-sec" id="pmvContact">
+    <div class="pmv-wrap">
+      <div class="pmv-contact">
+        <h2>加入抖音风 pmv 的内容生态</h2>
+        <p>无论你是创作者、品牌方还是单纯喜欢节拍影像的观众，这里都为你保留了一个位置。上传你的作品，参与挑战，或与我们聊聊合作可能。</p>
+        <div class="pmv-contact-btns">
+          <button class="pmv-btn pmv-btn-main" data-pmv-modal="submit">提交投稿</button>
+          <button class="pmv-btn pmv-btn-ghost" data-pmv-modal="feedback">反馈建议</button>
+          <button class="pmv-btn pmv-btn-ghost" data-pmv-share="抖音风 pmv 官方网站">分享给朋友</button>
+        </div>
+        <div class="pmv-contact-info">
+          合作邮箱：partner@pmv-studio.example　|　投稿咨询：creator@pmv-studio.example<br>
+          工作时间：周一至周五 10:00 - 19:00　|　线下交流：每季度一次的创作者开放日
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="pmv-wrap">
+    <div class="pmv-foot-grid">
+      <div>
+        <h4>抖音风 pmv 官方网站</h4>
+        <p>专注节拍影像的原创内容品牌，持续运营中。以匠心与创新打磨每一帧，让真实的节奏被更多人听见。</p>
+        <p style="margin-top:10px">© 2026 抖音风 pmv 版权所有</p>
+      </div>
+      <div>
+        <h4>内容板块</h4>
+        <a href="#pmvFocus">焦点影像</a>
+        <a href="#pmvStream">热门作品</a>
+        <a href="#pmvTopics">专题企划</a>
+        <a href="#pmvCreators">创作者矩阵</a>
+      </div>
+      <div>
+        <h4>关于我们</h4>
+        <a href="#pmvAbout">品牌故事</a>
+        <a href="#pmvDynamic">企业动态</a>
+        <a href="#pmvFaq">帮助中心</a>
+        <a href="#pmvContact">合作联系</a>
+      </div>
+      <div>
+        <h4>社区约定</h4>
+        <a href="#pmvFaq">投稿规范</a>
+        <a href="#pmvFaq">版权说明</a>
+        <a href="#pmvReviews">用户口碑</a>
+        <a href="#pmvContact">意见反馈</a>
+      </div>
+    </div>
+    <div class="pmv-foot-bottom">
+      <span>抖音风 pmv 官方网站 · 企业级原创影像平台 · 持续运营中</span>
+      <span>内容备案号：PMV-2026-1119 · 建议使用现代浏览器访问</span>
+    </div>
+  </div>
+</footer>
+
+<button class="pmv-backtop" id="pmvBackTop" aria-label="回到顶部">↑</button>
+<div class="pmv-toast" id="pmvToast" role="status" aria-live="polite"></div>
+
+<div class="pmv-modal" id="pmvModal" role="dialog" aria-modal="true" aria-labelledby="pmvModalTitle">
+  <div class="pmv-modal-box">
+    <button class="pmv-modal-close" id="pmvModalClose" aria-label="关闭弹窗">×</button>
+    <div id="pmvModalContent"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- toast ---------- */
+  var toastEl = document.getElementById('pmvToast');
+  var toastTimer = null;
+  function toast(msg){
+    toastEl.textContent = msg;
+    toastEl.classList.add('pmv-show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toastEl.classList.remove('pmv-show'); }, 2100);
+  }
+
+  /* ---------- mobile nav ---------- */
+  var burger = document.getElementById('pmvBurger');
+  var nav = document.getElementById('pmvNav');
+  burger.addEventListener('click', function(){
+    var open = nav.classList.toggle('pmv-nav-open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    burger.textContent = open ? '✕' : '☰';
+  });
+  nav.addEventListener('click', function(e){
+    if(e.target.tagName === 'A' && window.innerWidth <= 720){
+      nav.classList.remove('pmv-nav-open');
+      burger.textContent = '☰';
+      burger.setAttribute('aria-expanded','false');
+    }
+  });
+
+  /* ---------- active nav on scroll ---------- */
+  var navLinks = Array.prototype.slice.call(nav.querySelectorAll('a'));
+  var sections = navLinks.map(function(a){
+    return document.querySelector(a.getAttribute('href'));
+  }).filter(Boolean);
+  function markActive(){
+    var y = window.scrollY + 150;
+    var idx = 0;
+    sections.forEach(function(sec, i){
+      if(sec.offsetTop <= y) idx = i;
+    });
+    navLinks.forEach(function(a){ a.classList.remove('pmv-nav-on'); });
+    if(navLinks[idx]) navLinks[idx].classList.add('pmv-nav-on');
+  }
+  window.addEventListener('scroll', markActive, {passive:true});
+
+  /* ---------- back to top ---------- */
+  var backTop = document.getElementById('pmvBackTop');
+  backTop.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  /* ---------- search ---------- */
+  var searchForm = document.getElementById('pmvSearchForm');
+  var searchInput = document.getElementById('pmvSearchInput');
+  searchForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    var kw = searchInput.value.trim();
+    if(!kw){ toast('请输入关键词后再搜索'); searchInput.focus(); return; }
+    var hits = document.querySelectorAll('#pmvStreamGrid .pmv-video');
+    var count = 0;
+    hits.forEach(function(card){
+      var txt = card.textContent;
+      var show = txt.indexOf(kw) !== -1;
+      card.style.display = show ? '' : 'none';
+      if(show) count++;
+    });
+    var empty = document.getElementById('pmvEmpty');
+    if(count === 0){
+      document.querySelectorAll('#pmvStreamGrid .pmv-video').forEach(function(c){ c.style.display=''; });
+      empty.style.display = 'block';
+      empty.textContent = '未找到与“' + kw + '”完全匹配的作品，已为你恢复全部列表。';
+      toast('未找到匹配，已恢复全部作品');
+    }else{
+      empty.style.display = 'none';
+      toast('找到 ' + count + ' 个与“' + kw + '”相关的作品');
+      document.getElementById('pmvStream').scrollIntoView({behavior:'smooth', block:'start'});
+    }
+  });
+
+  /* ---------- filter ---------- */
+  var filterBox = document.getElementById('pmvFilter');
+  filterBox.addEventListener('click', function(e){
+    var btn = e.target.closest('button[data-pmv-filter]');
+    if(!btn) return;
+    filterBox.querySelectorAll('button').forEach(function(b){ b.classList.remove('pmv-filter-on'); });
+    btn.classList.add('pmv-filter-on');
+    var cat = btn.getAttribute('data-pmv-filter');
+    var cards = document.querySelectorAll('#pmvStreamGrid .pmv-video');
+    var shown = 0;
+    cards.forEach(function(c){
+      var hit = (cat === 'all') || (c.getAttribute('data-pmv-cat') === cat);
+      c.style.display = hit ? '' : 'none';
+      if(hit) shown++;
+    });
+    var empty = document.getElementById('pmvEmpty');
+    empty.style.display = shown ? 'none' : 'block';
+    if(!shown){
+      empty.textContent = '该题材下的作品正在整理中，欢迎先浏览其他方向。';
+    }
+  });
+
+  /* ---------- like & fav ---------- */
+  document.addEventListener('click', function(e){
+    var likeBtn = e.target.closest('[data-pmv-like]');
+    if(likeBtn){
+      var span = likeBtn.querySelector('span');
+      var n = parseInt(span.textContent.replace(/\D/g,''), 10) || 0;
+      var on = likeBtn.classList.toggle('pmv-on');
+      span.textContent = on ? n + 1 : Math.max(0, n - 1);
+      toast(on ? '已送出喜欢' : '已取消喜欢');
+      return;
+    }
+    var favBtn = e.target.closest('[data-pmv-fav]');
+    if(favBtn){
+      var onF = favBtn.classList.toggle('pmv-on-heart');
+      favBtn.textContent = onF ? '★ 已收藏' : '☆ 收藏';
+      toast(onF ? '已加入收藏' : '已取消收藏');
+      return;
+    }
+  });
+
+  /* ---------- modal system ---------- */
+  var modal = document.getElementById('pmvModal');
+  var modalContent = document.getElementById('pmvModalContent');
+  var modalClose = document.getElementById('pmvModalClose');
+
+  var modalTemplates = {
+    player: '<h3 id="pmvModalTitle">播放预览</h3><p>当前为作品预览位。完整的节拍短片与工程解析，将随官方合辑同步更新，欢迎先浏览焦点影像与热门作品流。</p><div class="pmv-modal-actions"><button class="pmv-btn pmv-btn-main" data-pmv-close>知道了</button></div>',
+    submit: '<h3 id="pmvModalTitle">投稿入口</h3><p>填写作品信息，编辑部将在 3 个工作日内完成初筛。</p>' +
+      '<div class="pmv-modal-field"><input type="text" placeholder="作品标题" aria-label="作品标题"></div>' +
+      '<div class="pmv-modal-field"><input type="text" placeholder="作品链接或工程说明" aria-label="作品链接"></div>' +
+      '<div class="pmv-modal-field"><textarea rows="3" placeholder="简要说明创作思路与所用素材授权情况" aria-label="作品说明"></textarea></div>' +
+      '<div class="pmv-modal-actions"><button class="pmv-btn pmv-btn-main" data-pmv-close>提交（演示）</button><button class="pmv-btn pmv-btn-ghost" data-pmv-close>取消</button></div>',
+    feedback: '<h3 id="pmvModalTitle">反馈建议</h3><p>你的意见会帮助我们把内容生态做得更稳。</p>' +
+      '<div class="pmv-modal-field"><textarea rows="4" placeholder="请描述你遇到的问题或建议" aria-label="反馈内容"></textarea></div>' +
+      '<div class="pmv-modal-actions"><button class="pmv-btn pmv-btn-main" data-pmv-close>提交反馈（演示）</button><button class="pmv-btn pmv-btn-ghost" data-pmv-close>取消</button></div>',
+    topic: '<h3 id="pmvModalTitle">专题说明</h3><p>专题企划以季度为周期征集作品，征集期内可随时投稿。评审由编辑部与社区评审共同完成，入选作品将进入官方合辑并获得推荐位。具体命题要求与素材规范，可在帮助中心查看。</p><div class="pmv-modal-actions"><button class="pmv-btn pmv-btn-main" data-pmv-close>了解了</button></div>'
+  };
+
+  function openModal(key){
+    var html = modalTemplates[key];
+    if(!html) return;
+    modalContent.innerHTML = html;
+    modal.classList.add('pmv-open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(){
+    modal.classList.remove('pmv-open');
+    modalContent.innerHTML = '';
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('click', function(e){
+    var trigger = e.target.closest('[data-pmv-modal]');
+    if(trigger){
+      openModal(trigger.getAttribute('data-pmv-modal'));
+      return;
+    }
+    if(e.target.closest('[data-pmv-close]')){ closeModal(); return; }
+    if(e.target === modal){ closeModal(); }
+  });
+  modalClose.addEventListener('click', closeModal);
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && modal.classList.contains('pmv-open')) closeModal();
+  });
+
+  /* ---------- author & comment cards ---------- */
+  document.addEventListener('click', function(e){
+    var authorBtn = e.target.closest('[data-pmv-author]');
+    if(authorBtn){
+      var name = authorBtn.getAttribute('data-pmv-author');
+      modalContent.innerHTML = '<h3 id="pmvModalTitle">' + name + '</h3>' +
+        '<p>官方认证创作者。长期在平台更新节拍影像作品，参与多期专题企划，并开放创作方法分享。</p>' +
+        '<div class="pmv-modal-actions"><button class="pmv-btn pmv-btn-main" data-pmv-close>关注（演示）</button><button class="pmv-btn pmv-btn-ghost" data-pmv-close>关闭</button></div>';
+      modal.classList.add('pmv-open');
+      document.body.style.overflow = 'hidden';
+      return;
+    }
+    var commentBtn = e.target.closest('[data-pmv-comment]');
+    if(commentBtn){
+      var title = commentBtn.getAttribute('data-pmv-comment');
+      modalContent.innerHTML = '<h3 id="pmvModalTitle">评论</h3>' +
+        '<p style="margin-bottom:12px">作品：' + title + '</p>' +
+        '<div class="pmv-review" style="margin-bottom:10px"><div class="pmv-review-top"><span class="pmv-avatar" style="background:linear-gradient(135deg,#00e5ff,#8b5cff)">观</span><b>观察者</b><small>刚刚</small></div><p>第三段的鼓点切换太顺了，反复看了好几遍。</p></div>' +
+        '<div class="pmv-review"><div class="pmv-review-top"><span class="pmv-avatar" style="background:linear-gradient(135deg,#ff2e88,#8b5cff)">小</span><b>小满</b><small>2 小时前</small></div><p>想知道这类环境音采样一般怎么处理降噪？</p></div>' +
+        '<div class="pmv-modal-field"><textarea rows="2" placeholder="写下你的评论" aria-label="评论内容"></textarea></div>' +
+        '<div class="pmv-modal-actions"><button class="pmv-btn pmv-btn-main" data-pmv-close>发送（演示）</button><button class="pmv-btn pmv-btn-ghost" data-pmv-close>关闭</button></div>';
+      modal.classList.add('pmv-open');
+      document.body.style.overflow = 'hidden';
+    }
+  });
+
+  /* ---------- share ---------- */
+  document.addEventListener('click', function(e){
+    var shareBtn = e.target.closest('[data-pmv-share]');
+    if(!shareBtn) return;
+    var title = shareBtn.getAttribute('data-pmv-share') || '抖音风 pmv 官方网站';
+    var url = window.location.href.split('#')[0];
+    function fallback(){
+      modalContent.innerHTML = '<h3 id="pmvModalTitle">分享</h3><p>' + title + '</p>' +
+        '<div class="pmv-modal-field"><input type="text" value="' + url + '" readonly aria-label="分享链接"></div>' +
+        '<div class="pmv-modal-actions"><button class="pmv-btn pmv-btn-main" data-pmv-copy>复制链接</button><button class="pmv-btn pmv-btn-ghost" data-pmv-close>关闭</button></div>';
+      modal.classList.add('pmv-open');
+      document.body.style.overflow = 'hidden';
+    }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(function(){
+        toast('链接已复制，可分享给朋友');
+      }).catch(fallback);
+    }else{
+      fallback();
+    }
+  });
+  document.addEventListener('click', function(e){
+    if(e.target.closest('[data-pmv-copy]')){
+      var input = modalContent.querySelector('input[readonly]');
+      if(input){
+        input.select();
+        try{ document.execCommand('copy'); }catch(err){}
+        toast('链接已复制');
+      }
+    }
+  });
+
+  /* ---------- smooth anchor scroll for buttons ---------- */
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest('[data-pmv-scroll]');
+    if(!btn) return;
+    var target = document.querySelector(btn.getAttribute('data-pmv-scroll'));
+    if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
+  });
+
+  /* ---------- init ---------- */
+  markActive();
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 400){ backTop.classList.add('pmv-show'); }
+    else{ backTop.classList.remove('pmv-show'); }
+  }, {passive:true});
+})();
+</script>
+</body>
+                                        </html>
